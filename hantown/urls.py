@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+import app1
+
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('^', )
+# ]
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url('admin/', admin.site.urls),
+    url('^', include('app1.urls')),  # 引入app1的url
 ]
+
+

@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
+# Application definitions
+# 这里配置的是所用的应用application, 包括django自带的
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,12 +50,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# 这里配置的是所有应用的urls.py文件的上级, 其他应用的urls.py应该指向它
 ROOT_URLCONF = 'hantown.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # 这里配置模板文件的路径
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

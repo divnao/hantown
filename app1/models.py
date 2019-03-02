@@ -17,7 +17,8 @@ class UserInfo(models.Model):
     ''' 相当于java中的toString()重写
     '''
     def __str__(self):
-        return "[user_id: " + self.user_id + ", user_name: " + self.user_name + "]"
+        # 返回部分字段数据, 并编码为utf-8
+        return self.user_name
 
 
 class Admin(models.Model):
